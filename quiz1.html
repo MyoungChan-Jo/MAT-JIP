@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>문제풀이</title>
     <style>
-        #login{
+        /* html 과정 */
+        .quizSection{
             width: 500px;
             height: 500px;
-            margin:0 auto;  
+            margin:0 auto;
+            margin-bottom: 12px;
         }
         .inner {
             width: 500px;
@@ -54,10 +56,23 @@
             cursor: pointer;
             
         }
+        /* position 과정 */
+        .positiondiv{
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            border: 1px solid black;
+            text-align: center;/* 글자 너비대비 중앙정렬 */
+            text-transform: capitalize;
+            /* position: static; 이건 기본값 */
+        }
+        #target {
+            background: yellow;
+        }
     </style>
 </head>
 <body>
-    <section id="login">
+    <section class="quizSection">
         <div class="inner">
             <img src="quizimages/notebook1.jpg" alt="notebook1">
             <h1>노트북 구매하기</h1>
@@ -73,6 +88,11 @@
                 <button id="next-btn">Login</button>
             </form>
         </div>
+    </section>
+    <section class="quizSection">
+        <div class="positiondiv">hello</div>
+        <div class="positiondiv" id="target">watch this</div>
+        <div class="positiondiv">hello</div>
     </section>
 </body>
 </html>
