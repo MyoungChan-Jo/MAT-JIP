@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문제풀이</title>
+    <style>
+        #login{
+            width: 500px;
+            height: 500px;
+            margin:0 auto;  
+        }
+        .inner {
+            width: 500px;
+            height: 500px;
+            border: 1px solid #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .inner > img {
+            width: 400px;
+            object-fit: contain;
+        }
+        .btn-form {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        .formArea{
+            width: 400px;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 16px;
+        }
+        .formArea > label {
+            color: #666666;
+            margin-bottom: 8px;
+        }
+
+        #id-box, #pwd-box {
+            border:none;
+            border-bottom: 1px solid #cccccc;
+        }
+
+        #next-btn{
+            width: 300px;
+            height: 30px;
+            background: #eaeaea;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            
+        }
+    </style>
+</head>
+<body>
+    <section id="login">
+        <div class="inner">
+            <img src="quizimages/notebook1.jpg" alt="notebook1">
+            <h1>노트북 구매하기</h1>
+            <form class="btn-form" action="get">
+                <div class="formArea">
+                    <label for="id-box">Id</label>
+                    <input id="id-box" type="id">
+                </div>
+                <div class="formArea">
+                    <label for="pwd-box">Password</label>
+                    <input id="pwd-box" type="password">
+                </div>
+                <button id="next-btn">Login</button>
+            </form>
+        </div>
+    </section>
+</body>
+</html>
