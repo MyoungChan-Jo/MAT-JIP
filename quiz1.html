@@ -6,56 +6,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>문제풀이</title>
     <style>
+        h3{
+            display:flex;
+            justify-content: center;
+            margin: 0;
+            margin-bottom:4px;}
+        h5{
+            margin:0 auto;  
+            justify-content: center;
+            width: 500px;
+            color:#999999;
+            background: #000;
+            padding: 10px;}
         /* html 과정 */
         .quizSection{
             width: 500px;
-            height: 500px;
+            height: auto;
             margin:0 auto;
             margin-bottom: 12px;
-        }
+            border: 1px solid black;
+            padding: 10px;}
         .inner {
             width: 500px;
             height: 500px;
             border: 1px solid #000;
             display: flex;
             flex-direction: column;
-            align-items: center;
-        }
-
+            align-items: center;}
         .inner > img {
             width: 400px;
-            object-fit: contain;
-        }
+            object-fit: contain;}
         .btn-form {
             display: flex;
             align-items: center;
-            flex-direction: column;
-        }
+            flex-direction: column;}
         .formArea{
             width: 400px;
             display: flex;
             flex-direction: column;
-            margin-bottom: 16px;
-        }
+            margin-bottom: 16px;}
         .formArea > label {
             color: #666666;
-            margin-bottom: 8px;
-        }
-
+            margin-bottom: 8px;}
         #id-box, #pwd-box {
             border:none;
-            border-bottom: 1px solid #cccccc;
-        }
-
+            border-bottom: 1px solid #cccccc;}
         #next-btn{
             width: 300px;
             height: 30px;
             background: #eaeaea;
             border: none;
             border-radius: 20px;
-            cursor: pointer;
-            
-        }
+            cursor: pointer;}
+        
         /* position 과정 */
         .positiondiv{
             width: 100px;
@@ -64,14 +67,39 @@
             border: 1px solid black;
             text-align: center;/* 글자 너비대비 중앙정렬 */
             text-transform: capitalize;
-            /* position: static; 이건 기본값 */
-        }
+            /* position: static; 이건 기본값 */}
         #target {
-            background: yellow;
-        }
+            background: yellow;}
+
+        /*display 과정*/
+        .displaydiv, .displayspan{
+            border: 1px solid black;
+            width: 100px;}
+
+        /*flex 과정*/
+        .container{
+            display: flex;
+            flex-direction: row;
+            width: 350px;
+            height: 130px;
+            background: #666666;}
+        .item {
+            width: 100px;
+            height: 100px;
+            background: #ffffff;
+            border: 1px solid black;}
+        .spacebetween{justify-content: space-between;}
+        .spacearound{justify-content: space-around;}
+        .spaceevenly{justify-content: space-evenly;}
+        .flexend{justify-content: flex-end;}
+        .flexstart{justify-content: flex-start;}
+        .center{justify-content: center;}
+        .stretch{justify-content: center; align-items: stretch; height: auto;}
     </style>
 </head>
 <body>
+    <!-- html과정 -->
+    <h3>html과정</h3>
     <section class="quizSection">
         <div class="inner">
             <img src="quizimages/notebook1.jpg" alt="notebook1">
@@ -89,10 +117,108 @@
             </form>
         </div>
     </section>
+    <!-- position 과정 -->
+    <h3>position과정</h3>    
     <section class="quizSection">
         <div class="positiondiv">hello</div>
         <div class="positiondiv" id="target">watch this</div>
         <div class="positiondiv">hello</div>
     </section>
+    <!-- display 과정 -->
+    <h3>display과정</h3>
+    <section class="quizSection">
+        <!-- block의 대표는 div -->
+        <!-- 박스모델이 적용됩니다 -->
+        <!-- width가100일때 공간안에서 영역을 가지기 위해 줄바꿈이 됩니다 -->
+        <div class="displaydiv">나는 div. block 엘리먼트입니다</div>
+        <div class="displaydiv">나는 div. block 엘리먼트입니다</div>
+        <!-- inline을 주게되면 넓이를 무시하게되어 줄바꿈이 되지 않습니다 -->
+        <!-- inlineblock의 경우 block을 유지하면서 공간이 충분하면 inline속성을 줍니다 -->
+        <!-- inline의 대표는 span -->
+        <!-- 박스모델 적용이 되지 않습니다 -->
+        <!-- width로100을주더라도 영역을 넘어 본래 줄을 유지합니다 -->
+        <!-- block을 주게되면 영역을 넘으면 줄바꿈이 됩니다 -->
+        <span class="displayspan">나는 span. inline 엘리먼트입니다</span>
+        <span class="displayspan">나는 span. inline 엘리먼트입니다</span>
+    </section>
+    <h3>flex과정</h3>
+    <section class="quizSection">
+        <!-- 컨테이너, 아이템, 주축(main axis), 교차축(cross axis) -->
+        <!-- 컨테이너는 화물칸이고 아이템은 화물이다.
+        플렉스 박스는 화물칸이다 즉, div > p 일때 부모가되는 div가 flex 속성을 가지는 부모라 볼 수 있다
+        주축은 가로값이다. flex-direction으로 지정된 방향을 말한다 row는 가로정렬, column은 세로정렬
+        교차축은 세로값이다 -->
+        <p>space-between ↓</p>
+        <div class="container spacebetween">
+            <div class="item">item-1</div>
+            <div class="item">item-2</div>
+            <div class="item">item-3</div>
+        </div>
+        <p>space-around ↓</p>
+        <div class="container spacearound">
+            <div class="item">item-1</div>
+            <div class="item">item-2</div>
+            <div class="item">item-3</div>
+        </div>
+        <p>space-evenly ↓</p>
+        <div class="container spaceevenly">
+            <div class="item">item-1</div>
+            <div class="item">item-2</div>
+            <div class="item">item-3</div>
+        </div>
+        <p>flex-end ↓</p>
+        <div class="container flexend">
+            <div class="item">item-1</div>
+            <div class="item">item-2</div>
+            <div class="item">item-3</div>
+        </div>
+        <p>flex-start ↓</p>
+        <div class="container flexstart">
+            <div class="item">item-1</div>
+            <div class="item">item-2</div>
+            <div class="item">item-3</div>
+        </div>
+        <p>center ↓</p>
+        <div class="container center">
+            <div class="item">item-1</div>
+            <div class="item">item-2</div>
+            <div class="item">item-3</div>
+        </div>
+        <p>align-tiems stretch(플렉스박스 max height과 박스 높이 같게) ↓</p>
+        <div class="container stretch">
+            <div class="item">item-1</div>
+            <div class="item">item-2</div>
+            <div class="item">item-3</div>
+        </div>
+    </section>
+    <h5>
+        컨테이너, 아이템, 주축(main axis), 교차축(cross axis)<br>
+        컨테이너는 화물칸이고 아이템은 화물이다.<br>
+        플렉스 박스는 화물칸이다 즉, div > p 일때 부모가되는 div가 flex 속성을 가지는 부모라 볼 수 있다<br>
+        주축은 가로값이다. flex-direction으로 지정된 방향을 말한다 row는 가로정렬, column은 세로정렬<br>
+        교차축은 세로값이다<br>
+        order:0; 0은 현위치며 박스안 지정된 한개의 클래스의 순서를 바꿈<br>
+        align-self: align item 을 정의한 클래스 하나에만 적용할때 사용<br>
+        flex-wrap: <br>
+        -nowrap: 모든 요소들을 한 줄에 정렬합니다.<br>
+        -wrap: 요소들을 여러 줄에 걸쳐 정렬합니다.<br>
+        -wrap-reverse: 요소들을 여러 줄에 걸쳐 반대로 정렬합니다.<br>
+        flex-flow : flex-direction과flex-wrap 을 합친걸로 순서대로 기입 ex: flex-flow:column row;<br>
+        align-content:<br>
+        -flex-start: 여러 줄들을 컨테이너의 꼭대기에 정렬합니다.<br>
+        -flex-end: 여러 줄들을 컨테이너의 바닥에 정렬합니다.<br>
+        -center: 여러 줄들을 세로선 상의 가운데에 정렬합니다.<br>
+        -space-between: 여러 줄들 사이에 동일한 간격을 둡니다.<br>
+        -space-around: 여러 줄들 주위에 동일한 간격을 둡니다.<br>
+        -stretch: 여러 줄들을 컨테이너에 맞도록 늘립니다.<br>
+    </h5>
+    <h3>mediaQuery과정</h3>
+    <section class="quizSection">
+
+    </section>
+    <h5>
+        반응형(디바이스 화면 사이즈에 맞게 다르게 보여주는 기술)과 적응형(디바이스가 모바일인지 pc 인지에 따른 다른 페이지 구현)<br>
+        반응형은 mediaQuery 사용으로 해결
+    </h5>
 </body>
 </html>
