@@ -63,6 +63,12 @@ nav {
   padding: 0 1.5rem;
 }
 
+footer{
+  background: #000;
+  height: 60px;
+  margin-top: 10px;
+}
+
 @media all and (min-width: 1024px) {
   .inner {
     max-width: 1024px;
